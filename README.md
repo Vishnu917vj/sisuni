@@ -1,4 +1,41 @@
 # Sisuni Virtual Try-On System 👕
+## How Actual Virtual Try-On Works
+
+In real virtual try-on research, the workflow typically follows these steps:
+
+### 1. Pose Estimation / Landmark Detection  
+*(e.g., MediaPipe, OpenPose)*  
+- Extract keypoints (shoulders, hips, torso, arms, etc.).  
+- Define a bounding box or region where the shirt should be placed.  
+
+---
+
+### 2. Cloth Warping / Geometric Matching  
+*(GMM, TPS warping)*  
+- Warp the shirt to match the person’s pose & body shape.  
+- Ensures sleeves align with arms, neckline with shoulders.  
+
+---
+
+### 3. Masking & Parsing  
+*(Human Parsing models like SCHP, CIHP)*  
+- Segment the person into regions (torso, arms, legs, background).  
+- Create a mask where the shirt should go.  
+
+---
+
+### 4. Composition Network  
+*(UNet / ResNet Generator)*  
+- Inputs: **(person image, warped shirt, mask)**  
+- Outputs: a realistic try-on image (blends colors, shadows, textures).  
+
+---
+
+### 5. Refinement *(Optional)*  
+- Use GAN loss, perceptual loss, or refinement modules to improve realism.  
+
+*This pipeline demonstrates how actual virtual try-on models generate realistic clothing overlays on a person.*
+
 
 ## 👕 Overlay using MediaPipe
 
