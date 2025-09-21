@@ -36,7 +36,7 @@ In real virtual try-on research, the workflow typically follows these steps:
 
 *This pipeline demonstrates how actual virtual try-on models generate realistic clothing overlays on a person.*
 
-##My Implementation
+## My Implementation
 
 ## 👕 Overlay using MediaPipe
 
