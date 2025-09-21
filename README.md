@@ -101,4 +101,19 @@ This demonstrates training on a small dataset and highlights how the model begin
 - Predicted try-on images from **single-sample CNN** and **three-sample CNN** training.
 
 ---
+# 👕 Virtual Try-On Prototype (3 Samples)
 
+This project is a **prototype for a virtual try-on system** that overlays shirts onto images of people using **MediaPipe for pose detection** and a **UNet-based refinement network**.  
+It demonstrates the pipeline with **3 sample images**.
+
+---
+
+## 🚀 Features
+- **Pose Detection** (using MediaPipe Pose landmarks).
+- **Cloth Warping** based on body keypoints (shoulders & hips).
+- **Overlay & Masking** to align shirt images onto the person.
+- **Custom Dataset Loader** for training.
+- **Simple UNet Model** to refine shirt-person overlay.
+- **Training Loop** with L1 loss optimization.
+ in the next cell you can find the output images 
+---
