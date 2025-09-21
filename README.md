@@ -1,0 +1,48 @@
+Sisuni Virtual Try-On System 👕
+👕 Overlay using MediaPipe
+This project implements a virtual try-on system where a t-shirt is overlaid onto a person’s image using MediaPipe Pose Landmarker and OpenCV.The system detects key body landmarks (shoulders and hips), calculates the appropriate size and position of the t-shirt, and blends it naturally on the person’s upper body using segmentation masks and alpha transparency.
+🖥️ Simple CNN Model with One-Sample Training
+This section demonstrates a simple convolutional neural network (CNN) trained on a single sample for virtual try-on. The model takes a person image and a t-shirt image as input and predicts the resulting try-on image.
+Key points:
+
+Input: Concatenation of person image and t-shirt image (6 channels).
+Model: Small UNet-like CNN with encoder, middle, and decoder blocks.
+Training: Single sample training using L1 loss for 1500 epochs.
+Output: Predicted try-on image showing the t-shirt overlaid on the person.
+
+This simple setup serves as a proof of concept for end-to-end try-on prediction using deep learning.
+🖥️ Simple CNN Model with Three-Sample Training
+This section extends the previous single-sample training to a slightly larger dataset with three samples. The goal is to train a Simple UNet-like CNN to predict virtual try-on results from multiple inputs.
+Key points:
+
+Input: Concatenation of person image and t-shirt image (6 channels).
+Dataset: Three image samples, each containing a person image, a t-shirt image, and the corresponding target try-on image.
+Model: Same UNet-like CNN with encoder, middle, and decoder blocks.
+Training: L1 loss with Adam optimizer for 1500 epochs, using a DataLoader for batching.
+Output: Predicted try-on image for any input sample after training, showing improved generalization compared to single-sample training.
+
+This demonstrates training on a small dataset and highlights how the model begins to learn patterns across multiple samples for more realistic virtual try-on results.
+⚙️ How to Run
+Upload to Google Colab:
+
+Upload the Jupyter Notebook (.ipynb) to Colab.
+Upload all images, t-shirts, target outputs, and the pose_landmarker.task model in a zip file and extract them in Colab.
+
+Install dependencies:All required module installation commands are included in the notebook (opencv-python, mediapipe, torch, torchvision, numpy, matplotlib, PIL). Just run the cells.
+Run the notebook:
+
+Click Run All in Colab.
+The virtual try-on system will overlay t-shirts and train the CNN models.
+Output images will be displayed inline and saved in the notebook folder.
+
+📷 Output
+
+tryon.jpg → Person image with the t-shirt virtually applied.
+Predicted try-on images from single-sample CNN and three-sample CNN training.
+
+🔮 Future Improvements
+
+Support for multiple clothing types (jackets, pants, dresses).
+Real-time virtual try-on using a webcam feed.
+Larger datasets for better generalization of CNN models.
+Automatic background removal for cleaner overlays.
