@@ -64,9 +64,3 @@ This demonstrates training on a small dataset and highlights how the model begin
 
 ---
 
-## 🔮 Future Improvements
-
-- Support for **multiple clothing types** (jackets, pants, dresses).  
-- **Real-time virtual try-on** using a webcam feed.  
-- Larger datasets for **better generalization** of CNN models.  
-- Automatic background removal for cleaner overlays.
